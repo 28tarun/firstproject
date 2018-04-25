@@ -3,17 +3,18 @@ pipeline {
   stages {
     stage('Prepration') {
       steps {
-        echo 'It is the preparation step.'
+        echo 'CODE IS FEACHED FORM THE REPOSTRY'
       }
     }
     stage('Build') {
       steps {
         echo 'Project will be hare'
+        bat 'mvn clean package'
       }
     }
     stage('test') {
       steps {
-        echo 'testing'
+        echo 'testing is start'
       }
     }
     stage('Deploy') {
@@ -26,5 +27,9 @@ pipeline {
         echo 'Done'
       }
     }
+  }
+  environment {
+    JAVA_HOME = 'C:\\Program Files\\Java\\jdk1.8.0_171'
+    MAVEN_HOME = 'C:\\apache-maven-3.5.3'
   }
 }
