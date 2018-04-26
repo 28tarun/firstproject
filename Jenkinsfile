@@ -9,7 +9,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Project will be hare'
-        bat 'mvn clean package'
+        bat 'maven clean package'
       }
     }
     stage('test') {
